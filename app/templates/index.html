@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1488/1488936.png">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* navbar  */
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.759);
+            border-top: 3px solid black;
+        }
+
+        .nav_li {
+            padding-right: 100px;
+        }
+
+        .nav_heading {
+            font-size: 30px;
+            padding-left: 80px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav_text {
+            color: white;
+            font-weight: 500;
+        }
+
+        .nav_heading1 {
+            color: white;
+        }
+
+        .nav_text:hover,
+        .nav_heading1:hover {
+            color: white;
+            text-shadow: 0 0 2px white;
+        }
+
+        .nav_text:hover {
+            border-bottom: 2px solid white;
+            border-radius: 5px;
+        }
+
+        /* navbar ends  */
+
+        /* all  */
+
+        .all {
+            background-color: black;
+            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(https://video-meta.humix.com/poster/Cl6Kn5dadli4/Cl6Kn5dadli4_j1709763155904-pjjsuo_t1709763494_base.004.jpg?w=432);
+            background-size: cover;
+            height: 84vh;
+        }
+
+        /* all  ends*/
+
+        /* content  */
+
+        .content_1,
+        .content_2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content_text {
+            padding-top: 50px;
+        }
+
+        .content_p1 {
+            font-size: 50px;
+            font-weight: 300;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 2px white;
+            cursor: pointer;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .content_h1,
+        .content_p {
+            color: white;
+            text-align: center;
+            text-shadow: 0 0 2px white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .content_p {
+            padding-top: 10px;
+        }
+
+        .btn,
+        .btn1 {
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0.833);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .btn:hover,
+        .btn1:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 2px white,
+                0 0 4px white,
+                0 0 12px white;
+        }
+
+        /* content ends */
+
+        /* message  */
+
+        .message {
+            width: 100%;
+            height: 236px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .alert {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .msg {
+            width: 400px;
+        }
+        .msg_text{
+            cursor: pointer;
+        }
+
+        .msg1 {
+            backdrop-filter: blur(5px);
+            color: white;
+            text-shadow: 0 0 2px;
+            border: 3px solid rgba(255, 255, 255, 0.29);
+        }
+
+        .msg_btn {
+            background-color: white;
+        }
+
+
+        /* message  */
+
+        /* footer  */
+
+        .footer {
+            width: 100%;
+            height: 42px;
+            background-color: rgba(0, 0, 0, 0.844);
+            text-align: center;
+        }
+
+        .footer_p {
+            color: white;
+            font-size: 12px;
+            padding-top: 10px;
+            text-shadow: 0 0 1px white;
+            cursor: pointer;
+        }
+
+        /* footer ends */
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar  -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand nav_heading" href="#"><i class="bi bi-journals text-warning"></i> <span
+                    class="nav_heading1">Diary</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav_item">
+                        <a class="nav-link nav_text" href="{% url 'sign' %}">Sign In</a>
+                    </li>
+                    <li class="nav_item nav_li">
+                        <a class="nav-link nav_text" href="{% url 'log' %}">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar ends -->
+
+    <!-- content  -->
+    <div class="all">
+        <div class="container-fluid content">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 content_1">
+                    <div class="container content_text">
+                        <p class="content_p1">There is always a reason <br>to smile </p>
+                        <h1 class="content_h1">Never give up on the things that make you smile </h1><br>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 content_2">
+                    <div class="container content_text">
+                        <h1 class="content_h1">D i a r y</h1>
+                        <h5 class="content_p">A collection of notes from your life</h5>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <p class="content_p"><button class="btn" type="submit">Start Writting <i
+                                        class="bi bi-vector-pen"></i></button></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content  ends -->
+
+        <!-- message  -->
+
+        <div class="message">
+            <div class=" container-fluid msg">
+                {% if messages %}
+                {% for i in messages %}
+                <div class="alert alert dismissible fade show d-flex msg1" role="alert" data-aos="zoom-in-left">
+                    <div>{{i}}</div>
+                    <div>
+                        <h3 class="msg_text">Sign In or Log In</h3>
+                        <br>
+                        <p style="text-align: center;"><a href="{% url 'sign' %}" class="btn btn1">Sign In <i
+                                    class="bi bi-person-circle"></i></a></p>
+                        <p style="text-align: center;"><a href="{% url 'log' %}" class="btn btn1">Log In <i
+                                    class="bi bi-person-fill"></i></a></p>
+                    </div>
+                    <button type="button" class="btn-close ms-auto msg_btn" data-bs-dismiss="alert"
+                        aria-label="close"></button>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- message ends -->
+    </div>
+    <div class="footer">
+        <p class="footer_p">Developed by Jithindas pm @ 2024</p>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

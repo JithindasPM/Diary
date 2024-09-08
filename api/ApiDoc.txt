@@ -1,0 +1,60 @@
+
+Diary
+================
+
+Model: User
+Fields=['id','username','first_name','last_name','email','password']
+
+1)  Api for Registration
+
+    url : http://127.0.0.1:8000/api/registration/
+    method : POST
+    body : ['username','first_name','last_name','email','password']
+    authorization : Nill
+
+
+1) for get Token
+
+    url : http://127.0.0.1:8000/api/token/
+    method : POST
+    body : ['username','password']
+    authorization : Nill
+
+
+Model: Diary_Model
+Fields=['id','title','note','created_date','user']
+
+1) Api for write Diary
+
+    url : http://127.0.0.1:8000/api/diary/
+    method : POST
+    body : ['title','note']
+    authorization : token
+
+2) Api for get all Diary
+
+    url : http://127.0.0.1:8000/api/diary/
+    method : GET
+    body : Nill
+    authorization : token
+
+1) Api for retrive a Diary
+
+    url : http://127.0.0.1:8000/api/diary/{id}/
+    method : GET
+    body : Nill
+    authorization : token
+
+1) Api for update Diary
+
+    url : http://127.0.0.1:8000/api/diary/{id}/
+    method : PUT
+    body : ['title','note']
+    authorization : token
+
+1) Api for delete Diary
+
+    url : http://127.0.0.1:8000/api/diary/{id}/
+    method : DELETE
+    body : Nill
+    authorization : token
